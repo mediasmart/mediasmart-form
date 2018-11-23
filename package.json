@@ -13,6 +13,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm publish --access public",
     "start": "webpack --watch",
     "build": "webpack"
   },
