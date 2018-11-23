@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node",
+    "noEmit": true,
+    "checkJs": true,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es2017"
+    ],
+    "pretty": true,
+    "resolveJsonModule": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
