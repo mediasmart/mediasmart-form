@@ -1,10 +1,10 @@
 import React from 'react';
 
 class Form extends React.Component {
-  render() {
+  render () {
     return (
       <div>
-        This is a Mediasmart Form. Flipas! ;-)
+        This is a Mediasmart Form. Flipas! :-)
       </div>
     );
   }
