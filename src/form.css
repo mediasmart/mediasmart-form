@@ -1,12 +1,26 @@
 [data-component-mediasmart-form] {
-    background: red;
-    color: blue;
-    display: flex;
-    transition: all .5s;
+  background: red;
+  color: blue;
+  display: flex;
+  transition: all .5s;
 
-    & > div {
-        background: green;
+  & button {
+    outline: none;
+  }
+  
+  & > div {
+    background: green;
+  }
+
+  & button.square {
+    width: 2.5em;
+    padding: 0.5em;
+
+    &:not(:hover) {
+      background: none;
+      border-color: transparent;
     }
+  }
 
-    user-select: none;
+  user-select: none;
 }

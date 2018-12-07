@@ -1,7 +1,7 @@
 import { array, string, func, object } from 'prop-types';
 import React from 'react';
 import Input from './input/index.jsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome';
 import { makeDeepObject, parseFieldsValue, patch } from './modules';
 import './form.css';
 
@@ -38,6 +38,7 @@ class Form extends React.Component {
       if (!Array.isArray(value[key])) value[key] = [value[key]];
       value[key].push({ _id: Math.random().toString(36) });
       this.setState({ value });
+      if (this.props.onChange) this.props.onChange(value);
     };
   }
 
@@ -48,7 +49,7 @@ class Form extends React.Component {
       const key = location.slice().pop();
       value[key].splice(index, 1);
       this.setState({ value });
-      if (this.props.onChange) this.props.onChange(this.state.value);
+      if (this.props.onChange) this.props.onChange(value);
     };
   }
 
@@ -116,12 +117,12 @@ class Form extends React.Component {
                         location={newLocation.concat([index])}
                         onChange={this.onChange}
                         value={val}
-                        actions={[{ icon: 'clear', onClick: this.onRemoveForm(newLocation, index) }]}
+                        actions={[{ icon: 'trash', onClick: this.onRemoveForm(newLocation, index) }]}
                       />
                     </div>
                   ))
                   }
-                  <div><button onClick={this.onAddForm(newLocation)}>+</button></div>
+                  <div><button className="square" onClick={this.onAddForm(newLocation)}><FAIcon icon="plus" /></button></div>
                 </div>
               );
             }
@@ -130,7 +131,14 @@ class Form extends React.Component {
           })
         }
         {
-          (this.props.actions || []).map(({ icon, onClick }) => (<div data-component-action><a href="" onClick={onClick}><small>{icon}</small> /></a></div>))
+          (this.props.actions || []).map(({ icon, onClick }) => (
+            <div data-component-action>
+              <a href="" onClick={onClick}>
+                g
+                <FAIcon icon="trash" />
+              </a>
+            </div>
+          ))
         }
       </div>
     );
@@ -142,7 +150,7 @@ class Form extends React.Component {
     return (
       <form data-component-mediasmart-form onSubmit={this.onSubmit} autoComplete="off">
         {this.renderContent(label)}
-        <div>ANTES <FontAwesomeIcon icon="stroopwafel" spin/> DESPUES</div>
+        <div>ANTES <FAIcon icon="stroopwafel" spin/> DESPUES</div>
         { onSubmit && <input type="submit" value="Submit" /> }
       </form>
     );
