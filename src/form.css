@@ -1,0 +1,12 @@
+[data-component-mediasmart-form] {
+    background: red;
+    color: blue;
+    display: flex;
+    transition: all .5s;
+
+    & > div {
+        background: green;
+    }
+
+    user-select: none;
+}

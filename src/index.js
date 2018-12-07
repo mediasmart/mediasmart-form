@@ -1,13 +1,3 @@
-import React from 'react';
-
-class Form extends React.Component {
-  render () {
-    return (
-      <div>
-        This is a Mediasmart Form. Flipas! :-)
-      </div>
-    );
-  }
-}
+import { default as Form } from './form.jsx';
 
 export default Form;

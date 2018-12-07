@@ -28,7 +28,11 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.5.1",
+    "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
-    "eslint-config-mediasmart": "^1.0.2"
+    "eslint-config-mediasmart": "^1.0.2",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.4.0",
+    "style-loader": "^0.23.1"
   }
 }
