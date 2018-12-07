@@ -1,17 +1,11 @@
 [data-component-mediasmart-form] {
-  background: red;
-  color: blue;
   display: flex;
-  transition: all .5s;
+  flex-direction: column;
 
   & button {
     outline: none;
   }
   
-  & > div {
-    background: green;
-  }
-
   & button.square {
     width: 2.5em;
     padding: 0.5em;
@@ -22,5 +16,44 @@
     }
   }
 
-  user-select: none;
+  & [data-component-row] {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    & > div, & > select {
+      flex-grow: 1;
+    }
+
+    $ [data-component-input2] {
+      align-self: flex-end;
+    }
+  }
+
+  & [data-component-form2='multiple'] {
+    display: flex;
+    flex-direction: column;
+
+    & [data-component-form2] {
+      flex-direction: row;
+    }
+
+    & [data-component-action] {
+      display: flex;
+      & > a {
+        align-self: center;
+      }
+    }
+
+    & > div > [data-component-form2] {
+      display: flex;
+      flex-direction: row;
+    }
+
+    & button {
+      border-radius: 2px;
+      padding: calc(var(--unit) * 0.2) calc(var(--unit) * 0.75);
+      margin: 0 0 0 auto;
+    }
+  }
 }
