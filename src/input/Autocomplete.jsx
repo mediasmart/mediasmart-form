@@ -3,7 +3,7 @@ import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome';
 
 const KEYCODE_ENTER = 13;
 
-function parseOptions (options) {
+function parseOptions (options = []) {
   if (options.every(op => op.value)) {
     options.unshift({ value: '', label: 'Select...' });
   }
@@ -104,16 +104,16 @@ function Autocomplete (props) {
           </li>
         ))}
         <div>
-          {props.exact && (
+          {props.exact && options.length && (
             <select name={props.name} onChange={onAdd} value="" >
-              { props.options.map(({ value, label }) => <option key={value} value={value}>{label || value}</option>) }
+              { options.map(({ value, label }) => <option key={value} value={value}>{label || value}</option>) }
             </select>
           )}
-          {!props.exact && (
+          {!props.exact && options.length && (
             <div data-role="input">
               <input type="text" list="productName" onKeyUp={onKeyUp} onInput={onInput} placeholder="Select..." />
               <datalist id="productName">
-                { props.options.map(({ value, label }) => <option key={value} value={value}>{label || value}</option>) }
+                { options.map(({ value, label }) => <option key={value} value={value}>{label || value}</option>) }
               </datalist>
             </div>
           )}

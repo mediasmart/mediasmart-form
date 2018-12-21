@@ -83,7 +83,7 @@ class Form extends React.Component {
     if (this.props.onSubmit) this.props.onSubmit(this.state.value);
   }
 
-  renderContent (label, fields, location, value, properties = { 'data-component-form2': true }) {
+  renderContent (label, fields, location, value, properties = { 'data-component-mediasmart-form': true }) {
     fields = fields || this.props.fields;
     location = location || this.props.location;
     value = value || this.props.value || {};
@@ -93,21 +93,24 @@ class Form extends React.Component {
         { label && <label>{label}</label> }
         {
           fields.map((field) => {
+            if (!field.name) return <label data-component-mediasmart-form-title>{field.label}</label>;
+
+            const isSubform = !!field.fields;
             if (Array.isArray(field)) return this.renderContent(null, field, location, value, { 'data-component-row': true });
             // if (Array.isArray(field)) return <Form location={location} value={value} onChange={this.onChange} fields={field} />;
 
             const newLocation = location.slice();
             newLocation.push(field.name);
 
-            if (field.fields) {
+            if (isSubform) {
               if (!field.multiple) {
                 return (<Form key={field.name} {...field} location={newLocation} onChange={this.onChange} value={value[field.name]} />);
               }
               let fieldValue = value[field.name] || [];
               if (!Array.isArray(fieldValue)) fieldValue = [fieldValue];
               return (
-                <div data-component-form2="multiple">
-                  <label>{field.label || field.name}</label>
+                <div data-component-mediasmart-form="multiple">
+                  <label data-component-mediasmart-form-title>{field.label || field.name}</label>
                   { fieldValue.map((val, index) => (
                     <div>
                       <Form
@@ -122,7 +125,9 @@ class Form extends React.Component {
                     </div>
                   ))
                   }
-                  <div><button className="square" onClick={this.onAddForm(newLocation)}><FAIcon icon="plus" /></button></div>
+                  <div data-component-form-add>
+                    <a href="" onClick={this.onAddForm(newLocation)}>Add another item</a>
+                  </div>
                 </div>
               );
             }
@@ -134,8 +139,7 @@ class Form extends React.Component {
           (this.props.actions || []).map(({ icon, onClick }) => (
             <div data-component-action>
               <a href="" onClick={onClick}>
-                g
-                <FAIcon icon="trash" />
+                <FAIcon icon="times" />
               </a>
             </div>
           ))
@@ -150,7 +154,6 @@ class Form extends React.Component {
     return (
       <form data-component-mediasmart-form onSubmit={this.onSubmit} autoComplete="off">
         {this.renderContent(label)}
-        <div>ANTES <FAIcon icon="stroopwafel" spin/> DESPUES</div>
         { onSubmit && <input type="submit" value="Submit" /> }
       </form>
     );

@@ -2,12 +2,12 @@
   padding: 1em 0 0 0;
   margin: 0.5em 0;
   position: relative;
+  display: block;
   // border: solid 1px red;
-
+    border-bottom: solid 1px #ddd;
   & > div {
     display: flex;
     flex-direction: row;
-    border-bottom: solid 1px #ddd;
   }
 
   & input {
@@ -66,12 +66,13 @@
     width: 100%;
   }
 
-  & > select {
+  & select {
+    font-size: 1em;
     appearance: none;
     background: none;
     border: none;
-    border-bottom: solid 1px #ddd;
     padding: 0.25em 0;
+    padding: 0;
     width: 100%;
     border-radius: 0;
 
