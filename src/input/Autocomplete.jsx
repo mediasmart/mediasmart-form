@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome';
 
 const KEYCODE_ENTER = 13;
 
@@ -118,11 +119,11 @@ function Autocomplete (props) {
           )}
           <div data-role="actions">
             <div>
-              <button onClick={onUpload}>&uarr;</button>
+              <button onClick={onUpload}><FAIcon icon='upload'/></button>
               <input type="file" onChange={onFileChange} accept=".txt, .csv" value="" />
             </div>
-            <button onClick={onDownload}>&darr;</button>
-            <button onClick={onClear}>&times;</button>
+            <button onClick={onDownload}><FAIcon icon='download'/></button>
+            <button onClick={onClear}><FAIcon icon='trash-alt'/></button>
           </div>
         </div>
       </ul>

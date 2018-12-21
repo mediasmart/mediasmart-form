@@ -88,6 +88,7 @@
 [data-component-input2-file] {
   position: relative;
   padding-top: 5px;
+  padding-bottom: 5px;
   
   & > input {
     position: absolute;
@@ -140,7 +141,7 @@
     vertical-align: middle;
     display: flex;
     flex-wrap: nowrap;
-
+    
     & > div {
       flex-grow: 1;
       position: relative;
@@ -154,7 +155,6 @@
         height: 100%;
         opacity: 0;
       }
-      
     }
 
     & > button, & > div > button {
@@ -165,10 +165,11 @@
       border: none;
       width: 1.8em;
       height: 100%;
+      opacity: 0.5;
     }
 
     & > button:hover, & > div:hover > button {
-      background: #f1f1f1;
+      background: none;
     }
   }
 

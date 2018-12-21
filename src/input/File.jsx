@@ -26,7 +26,6 @@ function getFileDescription (file) {
 function File (props) {
   const onChange = (event) => {
     event.preventDefault();
-    console.log('FILE CHANGE', event.target.files, 'TYPE', typeof event.target.files[0]);
     props.onChange({ [props.name]: event.target.files[0] });
   };
   return (
