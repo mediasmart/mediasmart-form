@@ -11,6 +11,7 @@
   & i {
     position: absolute;
     bottom: 0.2em;
+    opacity: 0.5;
 
     & ~ input, & ~label {
       padding-left: 1.2em;
@@ -39,6 +40,7 @@
     left: 0;
     bottom: 0.25em;
     pointer-events: none;
+    text-transform: capitalize;
   }
   
   & > label {
@@ -92,7 +94,7 @@
   flex-direction: row;
 
   & ~ label {
-    bottom: 0.6em;
+    bottom: 0.7em;
   }
 
   & > ul {

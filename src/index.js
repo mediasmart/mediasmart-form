@@ -1,12 +1,10 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlus, faStroopwafel, faTrash, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import { default as Form } from './form.jsx';
 
-library.add(
-  faEnvelope,
-  faStroopwafel,
-  faTrash,
-  faPlus,
-);
+console.log('FAS', fas);
+library.add(fab);
+library.add(fas);
 
 export default Form;

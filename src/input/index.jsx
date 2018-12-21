@@ -18,12 +18,20 @@ function renderInput (props) {
   return (<input {...props} placeholder={placeholder} />);
 }
 
+function parseIcon (icon) {
+  if (!icon) return;
+  icon = icon.split(' ');
+  if (icon.length === 1) icon = icon[0];
+  return icon;
+}
+
 export default (props) => {
   let className = '';
   if (INPUT_TYPES_STATIC_LABEL.includes(props.type) || props.placeholder) className = 'float-label';
+  const icon = parseIcon(props.icon);
   return (
     <div data-component-input2 style={{ flexGrow: props.weight || 1 }} {...{ className }}>
-      { props.icon && <i><FAIcon icon={props.icon} spin/></i> }
+      { props.icon && <i><FAIcon icon={icon} spin={props.spin} /></i> }
       {renderInput(props)}
       <label>{props.label}</label>
     </div>
