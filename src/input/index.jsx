@@ -29,10 +29,14 @@ export default (props) => {
   let className = '';
   if (INPUT_TYPES_STATIC_LABEL.includes(props.type) || props.placeholder) className = 'float-label';
   const icon = parseIcon(props.icon);
+  if (icon) className += ' with-icon';
+  if (props.value) className += ' with-value';
   return (
-    <div data-component-input2 style={{ flexGrow: props.weight || 1 }} {...{ className }}>
-      { props.icon && <i><FAIcon icon={icon} spin={props.spin} /></i> }
-      {renderInput(props)}
+    <div data-component-input2 style={{ flexGrow: props.weight || 1 }} {...{ className }} data-type={props.type}>
+      <div>
+        { props.icon && <i><FAIcon icon={icon} spin={props.spin} /></i> }
+        {renderInput(props)}
+      </div>
       <label>{props.label}</label>
     </div>
   );

@@ -2,6 +2,13 @@
   padding: 1em 0 0 0;
   margin: 0.5em 0;
   position: relative;
+  // border: solid 1px red;
+
+  & > div {
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 1px #ddd;
+  }
 
   & input {
     outline: none;
@@ -9,13 +16,11 @@
   }
 
   & i {
-    position: absolute;
-    bottom: 0.2em;
+    padding-top: 0.3em;
+    padding-right: 0.3em;
+    padding-left: 0;
     opacity: 0.5;
-
-    & ~ input, & ~label {
-      padding-left: 1.2em;
-    }
+    vertical-align: middle;
   }
 
   & > [data-component-input2-file] {
@@ -25,20 +30,26 @@
       padding-bottom: 5px;
     }
   }
-  
-  & input:not(:placeholder-shown) ~ label,
+
+  &.with-icon > label {
+    padding-left: 1.2em;
+  }
+
+  &.with-value > label,
   &:focus-within > label,
   &.float-label > label {
-    transform: translate(0, -2em);
+    top: 0;
     font-size: small;
     padding: 0;
   }
 
   & > label {
-    transition: all 200ms;
+    transition: all 200ms linear;
     position: absolute;
+    vertical-align: bottom;
+    line-height: 1em;
+    top: 1.5em;
     left: 0;
-    bottom: 0.25em;
     pointer-events: none;
     text-transform: capitalize;
   }
@@ -51,7 +62,6 @@
   & input {
     background: none;
     border: none;
-    border-bottom: solid 1px #ddd;
     padding: 0.25em 0;
     width: 100%;
   }
@@ -76,7 +86,6 @@
 }
 
 [data-component-input2-file] {
-  border-bottom: solid 1px #ddd;
   position: relative;
   padding-top: 5px;
   
@@ -89,13 +98,8 @@
 }
 
 [data-component-input2-autocomplete] {
-  border-bottom: solid 1px #ddd;
   display: flex;
   flex-direction: row;
-
-  & ~ label {
-    bottom: 0.7em;
-  }
 
   & > ul {
     margin: 0 0 5px 0;
@@ -175,12 +179,13 @@
     flex-grow: 1;
 
     & > li {
-      border: solid 1px #ddd;
-      margin: 0.2em 0.2em 0 0;
-      border-radius: 1em;
+      background: #f1f1f1;
+      margin: 1px 1px 0 0;
+      border-radius: 5px;
       display: flex;
       flex-direction: row;
       height: 1.5em;
+      font-size: small;
       
       & > div {
         max-width: 20em;
@@ -192,6 +197,7 @@
       }
 
       & > button {
+        background: none;
         border-radius: 1em;
         padding: 0;
         margin-right: 0.25em;
