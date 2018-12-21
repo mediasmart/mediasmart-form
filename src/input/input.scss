@@ -8,6 +8,15 @@
     font-size: 1em;
   }
 
+  & i {
+    position: absolute;
+    bottom: 0.2em;
+
+    & ~ input, & ~label {
+      padding-left: 1.2em;
+    }
+  }
+
   & > [data-component-input2-file] {
     min-height: 1.5em;
 
@@ -21,6 +30,7 @@
   &.float-label > label {
     transform: translate(0, -2em);
     font-size: small;
+    padding: 0;
   }
 
   & > label {
