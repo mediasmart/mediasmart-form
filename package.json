@@ -7,6 +7,7 @@
     "react": "^15.5.4"
   },
   "dependencies": {
+    "node-sass": "^4.11.0",
     "react": "^15.5.4",
     "webpack": "^2.6.1"
   },
@@ -34,8 +35,7 @@
     "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "eslint-config-mediasmart": "^1.0.2",
-    "postcss-loader": "^3.0.0",
-    "postcss-preset-env": "^6.4.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1"
   }
 }

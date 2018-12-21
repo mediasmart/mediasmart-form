@@ -19,23 +19,11 @@ module.exports = {
     }, {
       exclude: /(node_modules|bower_components|build)/,
       include: path.resolve(__dirname, 'src'),
-      test: /\.css$/,
+      test: /\.scss$/,
       use: [
         'style-loader',
         'css-loader',
-        {
-          loader: 'postcss-loader',
-          options: {
-            ident: 'postcss',
-            plugins: [
-              require('postcss-preset-env')({
-                autoprefixer: true,
-                stage: 0,
-                features: { 'nesting-rules': true },
-              }),
-            ],
-          },
-        },
+        'sass-loader',
       ],
     }],
   },

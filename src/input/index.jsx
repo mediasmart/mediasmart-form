@@ -2,7 +2,7 @@ import React from 'react';
 import Dropdown from './Dropdown.jsx';
 import Autocomplete from './Autocomplete.jsx';
 import FileInput from './File.jsx';
-import './input.css';
+import './input.scss';
 
 const INPUT_TYPES_STATIC_LABEL = ['dropdown', 'autocomplete', 'file'];
 const INPUTS = {

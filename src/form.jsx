@@ -3,7 +3,7 @@ import React from 'react';
 import Input from './input/index.jsx';
 import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome';
 import { makeDeepObject, parseFieldsValue, patch } from './modules';
-import './form.css';
+import './form.scss';
 
 function renderInput (props) {
   return (<Input {...props} />);
