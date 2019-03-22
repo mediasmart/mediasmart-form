@@ -7,8 +7,8 @@ import './input.scss';
 
 const INPUT_TYPES_STATIC_LABEL = ['dropdown', 'autocomplete', 'file'];
 const INPUTS = {
-  dropdown: Dropdown,
   autocomplete: Autocomplete,
+  dropdown: Dropdown,
   file: FileInput,
 };
 

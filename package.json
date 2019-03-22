@@ -1,6 +1,6 @@
 {
   "name": "mediasmart-form",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Complex forms made simple",
   "main": "build/index.js",
   "peerDependencies": {
